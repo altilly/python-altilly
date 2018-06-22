@@ -26,7 +26,7 @@ place order:
 see https://www.altilly.com/page/restapi#/ for full documentation on their REST API.
 
 
-## donations
+## found it useful?
 BTC : 38y579pT88RZ9AfwEfJnrV6o1bWASuaD3n
 
 
