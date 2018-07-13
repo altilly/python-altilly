@@ -8,7 +8,7 @@ Simply clone the repository and include it in your project, or make a new .py fi
 
 Make an instance of the class like so:
 
-
+`from altillyApiClass import AltillyApi`
 `altilly_api_client = AltillyApi(<APIKEY>, <APISECRET>)`
 
 
