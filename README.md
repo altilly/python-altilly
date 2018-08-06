@@ -19,13 +19,12 @@ query account balances:
 
 `balance_info = altilly_api_client.get_balances()`
 
-place order:
+place a simple order:
+
+`order = altilly_api_client.create_order('ETHBTC', 'sell', '1.0', '0.0505')`
 
 
-`order = altilly_api_client.create_order('ETHBTC', 'sell', quantity='1.0', price='0.0505')`
-
-
-see https://www.altilly.com/page/restapi#/ for full documentation on their REST API.
+see https://www.altilly.com/page/restapi#/ for full documentation on the REST API.
 
 
 ## found it useful?
