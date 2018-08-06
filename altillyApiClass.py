@@ -28,13 +28,13 @@ class AltillyApi(object):
         source = self.endpoint + method
         headers = {'Content-Type': 'application/x-www-form-urlencoded'}
         if request_type == 'get':
-            response = requests.get(source, headers=headers, auth=(self.key, self.secret))
+            response = requests.get(source, data=params, headers=headers, auth=(self.key, self.secret))
         elif request_type == 'post':
-            response = requests.post(source, headers=headers, auth=(self.key, self.secret))
+            response = requests.post(source, data=params, headers=headers, auth=(self.key, self.secret))
         elif request_type == 'delete':
-            response = requests.delete(source, headers=headers, auth=(self.key, self.secret))
+            response = requests.delete(source, data=params, headers=headers, auth=(self.key, self.secret))
         elif request_type == 'put':
-            response = requests.put(source, headers=headers, auth=(self.key, self.secret))
+            response = requests.put(source, data=params, headers=headers, auth=(self.key, self.secret))
         return response.json()
     #### PUBLIC API CALLS ####
     def get_all_symbols(self):
