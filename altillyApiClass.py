@@ -7,14 +7,16 @@ except ImportError:
     from urllib.parse import urlencode
     from urllib.parse import urljoin
 import requests
+from websocket import create_connection
+
 
 class AltillyApi(object):
     """ Represents a wrapper for altilly rest API """
 
-    def __init__(self, key, secret):
+    def __init__(self, key=None, secret=None):
+        self.key = key or ''
+        self.secret = secret or ''
         self.endpoint = 'https://api.altilly.com/api'
-        self.key = key
-        self.secret = secret
 
     def _query_api_public(self, method, parameter=None):
         source = self.endpoint + '/public/' + method
@@ -36,6 +38,7 @@ class AltillyApi(object):
         elif request_type == 'put':
             response = requests.put(source, data=params, headers=headers, auth=(self.key, self.secret))
         return response.json()
+
     #### PUBLIC API CALLS ####
     def get_all_symbols(self):
         return self._query_api_public(method='symbol')
@@ -69,6 +72,7 @@ class AltillyApi(object):
 
     def get_candles(self, symbol):
         return self._query_api_public(method='candles', parameter=symbol)
+
     #### PRIVATE API CALLS ####
     def get_open_orders(self, symbol=None):
         params = {'symbol':symbol}
