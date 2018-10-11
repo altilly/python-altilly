@@ -1,2 +1,0 @@
-from altillyApiClass import *
-
