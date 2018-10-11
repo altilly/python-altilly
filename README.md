@@ -13,6 +13,14 @@ Make an instance of the class like so:
 
 `altilly_api_client = AltillyApi(<APIKEY>, <APISECRET>)`
 
+You can also instantiate it without key, secret as follows:
+
+
+`altilly_api_client = AltillyApi()`
+
+
+if you only need public queries.
+
 
 query account balances:
 
